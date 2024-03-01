@@ -23,7 +23,7 @@ const Home = () => {
         readMoreLabel={t('ReadMoreLabel')}
         descriptionLabel={t('DescriptionLabel')}
         titleLabel={t('TitleLabel')}
-      ></CookieNoticeReact>
+      />
       <ScrollToTop />
       <Intro
         middleBlockHeadlineTitle={'FTL - Freiburger Transport Logistik'}
