@@ -1,0 +1,14 @@
+{
+  "section": [
+    {
+      "title": "Kompetent",
+      "content": "Unser Unternehmen bietet Ihnen sowohl eine qualifizierte Beratung, bevor Ihr Projekt beginnt, als auch eine kompetente und zuverlässige Ausführung, wenn es losgeht. Auch nach der Fertigstellung sind wir immer für Sie da und stehen Ihnen mit bestem Service zur Verfügung. Nutzen Sie unsere Stärken, um Ihr Projekt erfolgreich zu gestalten!",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Persönlich",
+      "content": "Für uns steht der direkte Kontakt im Vordergrund und nicht die anonyme Abwicklung. Wir legen Wert auf eine familiäre Atmosphäre und engagieren uns voll und ganz für Ihre Ziele. Das ist unser Erfolgsrezept für eine faire und erfolgreiche Zusammenarbeit.",
+      "icon": "notes.svg"
+    }
+  ]
+}
