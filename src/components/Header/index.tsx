@@ -105,7 +105,7 @@ const Header = ({ t }: any) => {
           <NavigationWrapper>
             <LogoContainer to='/' aria-label='homepage'>
               <SvgIcon
-                src='logoWithCircle2Svg.svg'
+                src='logo.svg'
                 width='120px'
                 height='120px'
               />

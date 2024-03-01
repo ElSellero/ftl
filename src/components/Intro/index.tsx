@@ -13,7 +13,7 @@ interface IntroProps {
   t: any;
 }
 
-const Intro = ({ middleBlockHeadlineTitle, middleBlockTitle, middleBlockContent, middleBlockButton, id, t }: IntroProps) => {
+const Intro = ({ middleBlockHeadlineTitle, middleBlockTitle, middleBlockContent, middleBlockButton, id }: IntroProps) => {
   
   return (
     <ContentWrapper id={id}>

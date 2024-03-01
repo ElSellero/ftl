@@ -26,7 +26,7 @@ const Home = () => {
       ></CookieNoticeReact>
       <ScrollToTop />
       <Intro
-        middleBlockHeadlineTitle={'Elektroservice Maximilian Breitnauer'}
+        middleBlockHeadlineTitle={'FTL - Freiburger Transport Logistik'}
         middleBlockTitle={t('HelloTitle')}
         middleBlockContent={t('HelloContent')}
         middleBlockButton={t('HelloButton')}
@@ -37,7 +37,7 @@ const Home = () => {
         title={t('IntroTitle')}
         content={t('IntroContent')}
         button={IntroContent.button}
-        icon='logoWithCircle2ThinBordersSvg.svg'
+        icon='logo.svg'
         id='motivation'
         size='80%'
         noShadow
@@ -49,7 +49,7 @@ const Home = () => {
         title={t('AboutTitle')}
         content={t('AboutContent')}
         section={AboutContentEn.section}
-        icon='../pictures/cables2.avif'
+        icon='../png/car1.png'
         iconType='png'
         id='about'
         size='100%'
@@ -59,7 +59,7 @@ const Home = () => {
         title={t('AboutTitle')}
         content={t('AboutContent')}
         section={AboutContentDe.section}
-        icon='../pictures/cables2.avif'
+        icon='../png/car1.png'
         iconType='png'
         id='about'
         size='100%'
