@@ -55,3 +55,9 @@ export const Empty = styled("div")`
   position: relative;
   height: 2rem;
 `;
+
+export const StyledHeadline = styled.h6`
+  color: #000080;
+  text-decoration: underline;
+  text-decoration-color: #ff6633;
+`;

@@ -8,7 +8,8 @@ import {
   ContentWrapper,
   ButtonWrapper,
   IconWrapper,
-  Empty
+  Empty,
+  StyledHeadline
 } from "./styles";
 import { SvgIcon } from "../../../common/SvgIcon";
 import { PngIcon } from "../../../common/PngIcon";
@@ -35,7 +36,7 @@ const RightBlock = ({
       <Row justify="space-between" align="middle" id={id}>
         <Col lg={11} md={11} sm={11} xs={24}>
           <ContentWrapper>
-            <h6>{title}</h6>
+            <StyledHeadline>{title}</StyledHeadline>
             <Content>{t(content)}</Content>
             <ButtonWrapper>
               {typeof button === "object" &&

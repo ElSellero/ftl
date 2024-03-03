@@ -10,7 +10,8 @@ import {
   MinTitle,
   MinPara,
   IconWrapper,
-  Empty
+  Empty,
+  StyledHeadline
 } from "./styles";
 import { PngIcon } from "../../../common/PngIcon";
 
@@ -39,7 +40,7 @@ const LeftContentBlock = ({
         </Col>
         <Col lg={11} md={11} sm={11} xs={24}>
           <ContentWrapper>
-            <h6>{t(title)}</h6>
+            <StyledHeadline>{t(title)}</StyledHeadline>
             <Content>{t(content)}</Content>
             <ServiceWrapper>
               <Row justify="space-between">

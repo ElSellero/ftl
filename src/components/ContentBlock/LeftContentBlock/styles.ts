@@ -35,7 +35,7 @@ export const MinTitle = styled("h6")`
   padding: 0.5rem 0;
   text-transform: uppercase;
   color: #000;
-  font-family: "Motiva Sans Light", sans-serif;
+  font-family: "Lucida Grande", sans-serif;
 `;
 
 export const MinPara = styled("p")`
@@ -55,4 +55,10 @@ export const IconWrapper = styled("div")<ContentBlockProps>`
 export const Empty = styled("div")`
   position: relative;
   height: 2rem;
+`;
+
+export const StyledHeadline = styled.h6`
+  color: #000080;
+  text-decoration: underline;
+  text-decoration-color: #ff6633;
 `;
