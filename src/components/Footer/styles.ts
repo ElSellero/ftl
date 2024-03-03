@@ -117,7 +117,7 @@ export const Label = styled("label")`
   color: #282828;
   display: block;
   margin-bottom: 2rem;
-  font-family: "Motiva Sans Bold", serif;
+  font-family: "Lunasima Bold", serif;
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;

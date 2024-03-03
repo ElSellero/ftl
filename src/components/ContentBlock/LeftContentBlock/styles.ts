@@ -35,7 +35,7 @@ export const MinTitle = styled("h6")`
   padding: 0.5rem 0;
   text-transform: uppercase;
   color: #000;
-  font-family: "Lucida Grande", sans-serif;
+  font-family: "Lunasima Light", sans-serif;
 `;
 
 export const MinPara = styled("p")`
