@@ -20,7 +20,7 @@ export const StyledButton = styled("button")<any | ButtonProps>`
   &:active,
   &:focus {
     color: #fff;
-    border: ${({disabled}) => disabled ? '1px solid #edf3f5' : '1px solid rgb(255, 130, 92)'};
-    background-color: ${({disabled}) => disabled ? '#bdc1c6' : 'rgb(255, 130, 92)'};
+    border: ${({disabled}) => disabled ? '1px solid #edf3f5' : '1px solid #FF6633'};
+    background-color: ${({disabled}) => disabled ? '#bdc1c6' : '#FF6633'};
   }
 `;

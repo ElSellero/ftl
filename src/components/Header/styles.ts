@@ -164,9 +164,9 @@ export const Span = styled('span')`
   &:hover,
   &:active,
   &:focus {
-    color: rgb(255, 130, 92);
+    color: #FF6633;
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) underline;
+    text-decoration: #FF6633 underline;
   }
 `;
 
