@@ -28,15 +28,12 @@ const Home = () => {
       <Intro
         middleBlockHeadlineTitle={'FTL - Freiburger Transport Logistik'}
         middleBlockTitle={t('HelloTitle')}
-        middleBlockContent={t('HelloContent')}
-        middleBlockButton={t('HelloButton')}
         id='hello'
       />
       <ContentBlock
         type='right'
         title={t('IntroTitle')}
         content={t('IntroContent')}
-        button={IntroContent.button}
         icon='logo.svg'
         id='motivation'
         size='80%'

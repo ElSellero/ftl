@@ -7,6 +7,7 @@ export const MiddleBlockSection = styled("section")<MiddleBlockProps>`
   text-align: center;
   display: flex;
   justify-content: center;
+  backdrop-filter: blur(2px);
 
   @media screen and (max-width: 1024px) {
     padding: 3.5rem 0 3rem;
@@ -16,7 +17,7 @@ export const MiddleBlockSection = styled("section")<MiddleBlockProps>`
 export const Content = styled("p")<MiddleBlockProps>`
   font-style: italic;
   padding: 0.75rem 0 0.75rem;
-  color: ${({isIntro}) => isIntro ? "white" : "#282828"} ;
+  color: #282828;
 `;
 
 export const ContentWrapper = styled("div")`
@@ -28,6 +29,6 @@ export const ContentWrapper = styled("div")`
 `;
 
 export const StyledHeadline = styled("h6")<MiddleBlockProps>`
-  color: ${({isIntro}) => isIntro ? "white" : "#282828"} ;
-  font-size: 2.5rem;
+  color: #282828;
+  font-size: 1.5rem;
 `;

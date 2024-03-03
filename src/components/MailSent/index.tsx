@@ -1,6 +1,5 @@
 import { Row, Col } from 'antd';
 import { withTranslation } from 'react-i18next';
-import { Slide } from 'react-awesome-reveal';
 import {
   MailSentSection,
   Content,
@@ -26,17 +25,15 @@ const MailSent = ({ title, content, button, id, t }: MailSentProps) => {
 
   return (
     <MailSentSection id={id}>
-      <Slide direction='up'>
-        <Row justify='center' align='middle'>
-          <ContentWrapper>
-            <Col lg={24} md={24} sm={24} xs={24}>
-              <StyledHeadline>{t(title)}</StyledHeadline>
-              <Content>{t(content)}</Content>
-              {button && <Button onClick={closeTab}>{button}</Button>}
-            </Col>
-          </ContentWrapper>
-        </Row>
-      </Slide>
+      <Row justify='center' align='middle'>
+        <ContentWrapper>
+          <Col lg={24} md={24} sm={24} xs={24}>
+            <StyledHeadline>{t(title)}</StyledHeadline>
+            <Content>{t(content)}</Content>
+            {button && <Button onClick={closeTab}>{button}</Button>}
+          </Col>
+        </ContentWrapper>
+      </Row>
     </MailSentSection>
   );
 };

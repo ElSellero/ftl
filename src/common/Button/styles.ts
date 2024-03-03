@@ -11,8 +11,8 @@ export const StyledButton = styled("button")<any | ButtonProps>`
   border-radius: 4px;
   padding: 13px 0;
   cursor: ${({disabled}) => disabled ? 'not-allowed' : 'pointer'};
-  margin-top: 0.625rem;
   max-width: 180px;
+  width: ${({fixedWidth}) => fixedWidth || '100%'};
   transition: all 0.3s ease-in-out;
   box-shadow: 0 16px 30px rgb(23 31 114 / 20%);
 

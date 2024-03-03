@@ -44,6 +44,7 @@ export const LogoContainer = styled(Link)`
 export const MenuWrapper = styled('div')`
   display: flex;
   align-items: center;
+  justify-content: center;
   @media only screen and (max-width: 890px) {
     flex-direction: column;
   }
@@ -108,6 +109,33 @@ export const CustomNavLinkSmall = styled(NavLink)`
   color: #282828;
   transition: color 0.2s ease-in;
   margin: 0.5rem 2rem;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.25rem 2rem;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  font-size: 1rem;
+  color: #282828;
+  transition: color 0.2s ease-in;
+  margin: 0.5rem 2rem;
+  display: inline-block;
+  text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.25rem 2rem;
+  }
+`;
+
+export const StyledButtonLink = styled(Link)`
+  font-size: 1rem;
+  min-width: 80px;
+  color: #282828;
+  transition: color 0.2s ease-in;
+  margin: 0.5rem 2rem;
+  display: inline-block;
+  text-align: center;
 
   @media only screen and (max-width: 768px) {
     margin: 1.25rem 2rem;
