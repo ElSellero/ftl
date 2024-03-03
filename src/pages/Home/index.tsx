@@ -103,7 +103,7 @@ const Home = () => {
           content={t('GettingInterestContent')}
           button={t('GettingInterestButton')}
           id='gettingInterest'
-        /> */}
+        /> 
         <ContentBlock
           type='right'
           title={t('ServicesTitle1')}
@@ -136,6 +136,7 @@ const Home = () => {
           content={t('ContactContent')}
           id='contact'
         />
+        */}
       </Container>
     </>
 
