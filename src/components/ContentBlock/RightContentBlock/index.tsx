@@ -23,7 +23,8 @@ const RightBlock = ({
   noShadow = false,
   t,
   id,
-  size = "100%"
+  size = "100%",
+  isList
 }: ContentBlockProps) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;

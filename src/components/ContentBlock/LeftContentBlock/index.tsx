@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../../common/SvgIcon";
-import { ContentBlockProps } from "../types";
+import { ContentBlockProps, ListObject } from "../types";
 import {
   LeftContentSection,
   Content,
@@ -24,7 +24,8 @@ const LeftContentBlock = ({
   section,
   t,
   id,
-  size = "100%"
+  size = "100%",
+  isList
 }: ContentBlockProps) => {
   return (
     <LeftContentSection>
@@ -43,6 +44,17 @@ const LeftContentBlock = ({
             <StyledHeadline>{t(title)}</StyledHeadline>
             <Content>{t(content)}</Content>
             <ServiceWrapper>
+            {isList ? (
+              <Row justify="space-between">
+                <ul>
+                  {isList.map((item: ListObject, id: number) => (
+                    <li key={id}>
+                      <MinTitle>{t(item.title)}</MinTitle>
+                      <MinPara>{t(item.content)}</MinPara>
+                    </li>
+                  ))}
+                </ul>
+              </Row>) : 
               <Row justify="space-between">
                 {typeof section === "object" &&
                   section.map((item: any, id: number) => {
@@ -55,6 +67,7 @@ const LeftContentBlock = ({
                     );
                   })}
               </Row>
+            }
             </ServiceWrapper>
           </ContentWrapper>
         </Col>

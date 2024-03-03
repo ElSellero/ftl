@@ -3,6 +3,7 @@ import AboutContentDe from '../../content/AboutContentDe.json';
 import { useTranslation } from 'react-i18next';
 import Intro from '../../components/Intro';
 import CookieNoticeReact from '../../components/CookieNotice';
+import { ListObject } from '../../components/ContentBlock/types';
 
 const Contact = lazy(() => import('../../components/ContactForm'));
 const Container = lazy(() => import('../../common/Container'));
@@ -12,7 +13,53 @@ const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 
 const Home = () => {
   const { t } = useTranslation();
-
+  const listObject: ListObject[] = [
+    {
+      id: '1',
+      title: 'November 2016',
+      content: 'Bewilligung als zugelassener Versender durch das Hauptzollamt Lörrach'
+    },
+    {
+      id: '2',
+      title: 'Juli 2014',
+      content: 'Erteilung eines Zertifikates Zollmanager IHK durch die IHK Hochrhein-Bodensee'
+    },
+    {
+      id: '3',
+      title: 'August 2013',
+      content: 'Erteilung eines AEO-Zertifikates durch das Hauptzollamt Lörrach'
+    },
+    {
+      id: '4',
+      title: 'Juli 2013',
+      content: 'Erteilung einer Postlizenz gemäß § 6 PostG'
+    },
+    {
+      id: '5',
+      title: 'Januar 2012',
+      content: 'Verlegung der Administrative in die Büroräume unserer Lageranschrift in Teningen'
+    },
+    {
+      id: '6',
+      title: 'September 2011',
+      content: 'Inbetriebnahme der Lagerräumlichkeiten in Teningen'
+    },
+    {
+      id: '7',
+      title: 'Dezember 2010',
+      content: 'Bewilligung eines laufenden Zahlungsaufschubes (Aufschubkonto)'
+    },
+    {
+      id: '8',
+      title: 'Oktober 2010',
+      content: 'Oktober 2010 – Mitgliedschaft in einem europaweitem Kurierverbund'
+    },
+    {
+      id: '9',
+      title: 'September 2010',
+      content: 'Firmengründung'
+    }
+  ] 
   return (
     <>
       <IntroContainer>
@@ -32,23 +79,23 @@ const Home = () => {
           titleLabel={t('TitleLabel')}
         />
         <ScrollToTop />
-          <ContentBlock
-          type='left'
-          title={t('AboutTitle')}
-          content={t('AboutContent')}
-          section={AboutContentDe.section}
-          icon='../png/stock3.png'
-          iconType='png'
-          id='about'
-          size='100%'
-          />
         <ContentBlock
           type='right'
-          title={t('IntroTitle')}
+          title={t('AboutTitle')}
           content={t('IntroContent')}
           icon='../png/stock4.png'
           id='motivation'
           size='100%'
+        />
+        <ContentBlock
+        type='left'
+        title={t('Firmengeschichte')}
+        content={t('')}
+        icon='../png/stock3.png'
+        iconType='png'
+        id='about'
+        size='100%'
+        isList={listObject}
         />
         
         {/* <MiddleBlock
