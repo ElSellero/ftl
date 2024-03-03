@@ -3,7 +3,7 @@ import { MiddleBlockProps } from ".";
 
 export const MiddleBlockSection = styled("section")<MiddleBlockProps>`
   position: relative;
-  padding: 7.5rem 0 3rem;
+  padding: 4rem 0 6.5rem;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -30,5 +30,5 @@ export const ContentWrapper = styled("div")`
 
 export const StyledHeadline = styled("h6")<MiddleBlockProps>`
   color: #282828;
-  font-size: 1.5rem;
+  font-size: 2rem;
 `;

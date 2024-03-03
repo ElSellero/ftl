@@ -43,7 +43,7 @@ export const ButtonWrapper = styled("div")`
 
 export const IconWrapper = styled("div")<ContentBlockProps>`
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   -webkit-box-shadow: ${({noShadow}) => noShadow ? "none" : "8px 8px 13px 1px rgba(84,84,84,0.88)"}; 
   box-shadow: ${({noShadow}) => noShadow ? "none" : "8px 8px 13px 1px rgba(84,84,84,0.88)"};
   @media only screen and (max-width: 575px) {
