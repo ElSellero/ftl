@@ -1,6 +1,5 @@
 import { lazy } from 'react';
 import AboutContentDe from '../../content/AboutContentDe.json';
-import AboutContentEn from '../../content/AboutContentEn.json';
 import { useTranslation } from 'react-i18next';
 import Intro from '../../components/Intro';
 import CookieNoticeReact from '../../components/CookieNotice';
@@ -12,7 +11,7 @@ const ScrollToTop = lazy(() => import('../../common/ScrollToTop'));
 const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 
 const Home = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -33,17 +32,6 @@ const Home = () => {
           titleLabel={t('TitleLabel')}
         />
         <ScrollToTop />
-        {i18n.language === 'en' ? 
-          <ContentBlock
-          type='left'
-          title={t('AboutTitle')}
-          content={t('AboutContent')}
-          section={AboutContentEn.section}
-          icon='../png/car1.png'
-          iconType='png'
-          id='about'
-          size='100%'
-          /> :
           <ContentBlock
           type='left'
           title={t('AboutTitle')}
@@ -54,7 +42,6 @@ const Home = () => {
           id='about'
           size='100%'
           />
-        }
         <ContentBlock
           type='right'
           title={t('IntroTitle')}
