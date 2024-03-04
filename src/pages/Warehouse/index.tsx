@@ -1,17 +1,17 @@
 import { lazy } from "react";
 
-const CustomsBlock = lazy(() => import("../../components/CustomsBlock"));
+const WarehouseBlock = lazy(() => import("../../components/WarehouseBlock"));
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 
-const Customs = () => {
+const Warehouse = () => {
   
   return (
     <Container>
       <ScrollToTop />
-      <CustomsBlock id={"customs"}/>
+      <WarehouseBlock id={"warehouse"}/>
     </Container>
   );
 };
 
-export default Customs;
+export default Warehouse;

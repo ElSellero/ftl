@@ -3,12 +3,12 @@ import { useTranslation, withTranslation } from 'react-i18next';
 import AboutContentDe from '../../content/AboutContentDe.json';
 
 
-interface CustomsBlockProps {
+interface ContactBlockProps {
   id?: string;
   t: any;
 }
 
-const CustomsBlock = ({ id }: CustomsBlockProps) => {
+const ContactBlock = ({ id }: ContactBlockProps) => {
   const { t } = useTranslation();
   const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 
@@ -27,4 +27,4 @@ const CustomsBlock = ({ id }: CustomsBlockProps) => {
   );
 };
 
-export default withTranslation()(CustomsBlock);
+export default withTranslation()(ContactBlock);
