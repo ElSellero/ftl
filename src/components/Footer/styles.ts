@@ -62,9 +62,9 @@ export const Large = styled(Link)<any>`
   max-width: max-content;
 
   &:hover {
-    color: rgb(255, 130, 92);
+    color: #FF6633;
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) underline;
+    text-decoration: #FF6633 underline;
   }
 `;
 
@@ -77,8 +77,8 @@ export const Chat = styled("p")`
   transition: all 0.3s ease-in-out;
   font-size: medium;
   &:hover {
-    border-bottom: 1px solid rgb(255, 130, 92);
-    color: rgb(255, 130, 92);
+    border-bottom: 1px solid #FF6633;
+    color: #FF6633;
   }
 `;
 
@@ -117,7 +117,7 @@ export const Label = styled("label")`
   color: #282828;
   display: block;
   margin-bottom: 2rem;
-  font-family: "Motiva Sans Bold", serif;
+  font-family: "Lunasima Bold", serif;
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;

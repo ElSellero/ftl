@@ -15,10 +15,30 @@ const routes = [
     component: "Datenschutz",
   },
   {
-    path: ["/", "/thanks"],
+    path: ["/", "/customs"],
     exact: true,
-    component: "Thanks",
+    component: "Customs",
   },
+  {
+    path: ["/", "/importexport"],
+    exact: true,
+    component: "ImportExport",
+  },
+  {
+    path: ["/", "/direct"],
+    exact: true,
+    component: "Direct",
+  },
+  {
+    path: ["/", "/warehouse"],
+    exact: true,
+    component: "Warehouse",
+  },
+  {
+    path: ["/", "/contact"],
+    exact: true,
+    component: "Contact",
+  }
 ];
 
 export default routes;

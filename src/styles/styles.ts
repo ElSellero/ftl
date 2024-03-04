@@ -1,16 +1,17 @@
 import { createGlobalStyle } from "styled-components";
+import background from './background.jpg';
 
 export const Styles = createGlobalStyle`
 
     @font-face {
-        font-family: "Motiva Sans Light";
-        src: url("/fonts/Motiva-Sans-Light.ttf") format("truetype");
+        font-family: "Lunasima Light";
+        src: url("/fonts/Lunasima-Light.ttf") format("truetype");
         font-style: normal;
     }
 
     @font-face {
-        font-family: "Motiva Sans Bold";
-        src: url("/fonts/Motiva-Sans-Bold.ttf") format("truetype");
+        font-family: "Lunasima Bold";
+        src: url("/fonts/Lunasima-Bold.ttf") format("truetype");
         font-style: normal;
     }
 
@@ -18,17 +19,25 @@ export const Styles = createGlobalStyle`
     body,
     html,
     a {
-        font-family: 'Motiva Sans Light', sans-serif;
+        font-family: 'Lunasima Light', sans-serif;
     }
 
 
     body {
-        margin:0;
-        padding:0;
+        margin: 0;
+        padding: 0;
         border: 0;
         outline: 0;
         background: #fff;
         overflow-x: hidden;
+        background-image: url(${background});
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        @media screen and (max-width: 1920px) {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
     }
 
     a:hover {
@@ -57,7 +66,7 @@ export const Styles = createGlobalStyle`
     h4,
     h5,
     h6 {
-        font-family: 'Motiva Sans Bold', serif;
+        font-family: 'Lunasima Bold', serif;
         color: #282828;
         font-size: 56px;
         line-height: 1.18;

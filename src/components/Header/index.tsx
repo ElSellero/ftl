@@ -18,23 +18,24 @@ import {
   LanguageSwitchContainer,
   LanguageSwitch,
   Empty,
+  StyledLink,
 } from './styles';
 import { SvgIcon } from '../../common/SvgIcon';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import i18n from 'i18next';
 
 const Header = ({ t }: any) => {
-  const [visible, setVisibility] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
   const handleChange = (language: string) => {
     i18n.changeLanguage(language);
   };
   const showDrawer = () => {
-    setVisibility(!visible);
+    setIsVisible(!isVisible);
   };
 
   const onClose = () => {
-    setVisibility(!visible);
+    setIsVisible(!isVisible);
   };
 
   const MenuItem = () => {
@@ -43,11 +44,26 @@ const Header = ({ t }: any) => {
       element.scrollIntoView({
         behavior: 'smooth',
       });
-      setVisibility(false);
+      setIsVisible(false);
     };
     return (
       <MenuWrapper>
-        <CustomNavLinkSmall onClick={() => scrollTo('about')}>
+        <StyledLink to={'/home'}>
+          <Span>Über uns</Span>
+        </StyledLink>
+        <StyledLink to={'/customs'}>
+          <Span>Zollmanagement</Span>
+        </StyledLink>
+        <StyledLink to={'/importexport'}>
+          <Span>Im- und Export</Span>
+        </StyledLink>
+        <StyledLink to={'/direct'}>
+          <Span>Direktfahrten</Span>
+        </StyledLink>
+        <StyledLink to={'/warehouse'}>
+          <Span>Lagerlogistik</Span>
+        </StyledLink>
+        {/* <CustomNavLinkSmall onClick={() => scrollTo('about')}>
           <Span>{t('About')}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo('motivation')}>
@@ -58,16 +74,19 @@ const Header = ({ t }: any) => {
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo('career')}>
           <Span>{t('Career')}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall
+        </CustomNavLinkSmall> */}
+        {/* <CustomNavLinkSmall
           style={{ width: '180px' }}
           onClick={() => scrollTo('contact')}
         >
           <Span>
             <Button>{t('Contact')}</Button>
           </Span>
-        </CustomNavLinkSmall>
-        <Empty />
+        </CustomNavLinkSmall> */}
+        <StyledLink to={'/contact'}>
+          <Button fixedWidth={'140px'}>{t('Contact')}</Button>
+        </StyledLink>
+        {/* <Empty />
         <LanguageSwitchContainer>
           <LanguageSwitch onClick={() => handleChange('de')}>
             <SvgIcon
@@ -85,15 +104,15 @@ const Header = ({ t }: any) => {
               height='30px'
             />
           </LanguageSwitch>
-          {/* <LanguageSwitch onClick={() => handleChange('es')}>
+          <LanguageSwitch onClick={() => handleChange('es')}>
                   <SvgIcon
                     src='spain.svg'
                     aria-label='homepage'
                     width='30px'
                     height='30px'
                   />
-                </LanguageSwitch> */}
-        </LanguageSwitchContainer>
+                </LanguageSwitch> 
+        </LanguageSwitchContainer> */}
       </MenuWrapper>
     );
   };
@@ -105,8 +124,8 @@ const Header = ({ t }: any) => {
           <NavigationWrapper>
             <LogoContainer to='/' aria-label='homepage'>
               <SvgIcon
-                src='logoWithCircle2Svg.svg'
-                width='120px'
+                src='logo.svg'
+                width='360px'
                 height='120px'
               />
             </LogoContainer>
@@ -126,7 +145,7 @@ const Header = ({ t }: any) => {
               </Burger>
             )}
         </Row>
-        <Drawer closable={false} visible={visible} onClose={onClose}>
+        <Drawer closable={false} visible={isVisible} onClose={onClose}>
           <Col style={{ marginBottom: '2.5rem' }}>
             <Label onClick={onClose}>
               <Col span={12}>

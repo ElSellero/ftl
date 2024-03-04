@@ -1,6 +1,5 @@
 import { Row, Col } from 'antd';
 import { withTranslation } from 'react-i18next';
-import { Slide } from 'react-awesome-reveal';
 import { ContactProps } from './types';
 import { Button } from '../../common/Button';
 import Block from '../Block';
@@ -61,54 +60,50 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
     <ContactContainer id={id}>
       <Row justify='space-between' align='middle'>
         <Col lg={12} md={11} sm={24} xs={24}>
-          <Slide direction='left'>
-            <Block title={title} content={content} />
-          </Slide>
+          <Block title={title} content={content} />
         </Col>
         <Col lg={12} md={12} sm={24} xs={24}>
-          <Slide direction='right'>
-            <FormGroup
-              autoComplete='on'
-              action={FORM_ENDPOINT}
-              onSubmit={handleSubmit}
-              method='POST'
-              target='_blank'
-            >
-              <Col span={24}>
-                <Input
-                  type='text'
-                  name='name'
-                  placeholder='Your Name'
-                  required
-                />
-              </Col>
-              <Col span={24}>
-                <Input
-                  type='text'
-                  name='email'
-                  placeholder='Your Email'
-                  value={mailAddress || ''}
-                  onChange={(e) => handleChange(e.target.value)}
-                  required
-                />
-              </Col>
-              <Col span={24}>
-                {!isMailValid ? (
-                  <Para>{t('MailValidationError')}</Para>
-                ) : (
-                  <Empty></Empty>
-                )}
-              </Col>
-              <Col span={24}>
-                <TextArea placeholder='Your Message' name='message' required />
-              </Col>
-              <ButtonContainer>
-                <Button type='submit' name='submit' disabled={!isMailValid}>
-                  {t('Submit')}
-                </Button>
-              </ButtonContainer>
-            </FormGroup>
-          </Slide>
+          <FormGroup
+            autoComplete='on'
+            action={FORM_ENDPOINT}
+            onSubmit={handleSubmit}
+            method='POST'
+            target='_blank'
+          >
+            <Col span={24}>
+              <Input
+                type='text'
+                name='name'
+                placeholder='Your Name'
+                required
+              />
+            </Col>
+            <Col span={24}>
+              <Input
+                type='text'
+                name='email'
+                placeholder='Your Email'
+                value={mailAddress || ''}
+                onChange={(e) => handleChange(e.target.value)}
+                required
+              />
+            </Col>
+            <Col span={24}>
+              {!isMailValid ? (
+                <Para>{t('MailValidationError')}</Para>
+              ) : (
+                <Empty></Empty>
+              )}
+            </Col>
+            <Col span={24}>
+              <TextArea placeholder='Your Message' name='message' required />
+            </Col>
+            <ButtonContainer>
+              <Button type='submit' name='submit' disabled={!isMailValid}>
+                {t('Submit')}
+              </Button>
+            </ButtonContainer>
+          </FormGroup>
         </Col>
       </Row>
     </ContactContainer>

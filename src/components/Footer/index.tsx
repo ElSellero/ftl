@@ -46,18 +46,23 @@ const Footer = ({ t }: any) => {
             <Col lg={6} md={6} sm={24} xs={24}>
               <Language>{t('Contact')}</Language>
               <Para>{t(`Questions`)}</Para>
-              <a href='mailto:info@elektroservice-breitnauer.de'>
-                <Chat>{t(`WriteMail`)}</Chat>
+              <a href='mailto:info@ftl-freiburg.de'>
+                <Chat>E-Mail: info@ftl-freiburg.de</Chat>
               </a>
-              <a href='tel:+49 170 4577579'>
-                <Chat>+49 170 4577579</Chat>
+              <a href='tel:+49 7641 9627-930'>
+                <Chat>Tel: +49 7641 9627-930</Chat>
               </a>
+              <>
+                <a href='fax:+49 7641 9627-9390'>
+                  <Chat>Fax: +49 7641 9627-9390</Chat>
+                </a>
+              </>
             </Col>
             <Col lg={6} md={6} sm={24} xs={24}>
               <Language>{t('Address')}</Language>
-              <Para>Maximilian Breitnauer</Para>
-              <Para>Auf der Linge 35</Para>
-              <Para>79112 Freiburg im Breisgau</Para>
+              <Para>FTL - Freiburger Transport Logistik GbR</Para>
+              <Para>Carl-Zeiss-Straße 7</Para>
+              <Para>DE-79331 Teningen</Para>
               <Empty></Empty>
             </Col>
             <Col lg={6} md={6} sm={24} xs={24}>

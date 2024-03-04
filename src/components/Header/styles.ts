@@ -44,6 +44,7 @@ export const LogoContainer = styled(Link)`
 export const MenuWrapper = styled('div')`
   display: flex;
   align-items: center;
+  justify-content: center;
   @media only screen and (max-width: 890px) {
     flex-direction: column;
   }
@@ -114,6 +115,33 @@ export const CustomNavLinkSmall = styled(NavLink)`
   }
 `;
 
+export const StyledLink = styled(Link)`
+  font-size: 1rem;
+  color: #282828;
+  transition: color 0.2s ease-in;
+  margin: 0.5rem 2rem;
+  display: inline-block;
+  text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.25rem 2rem;
+  }
+`;
+
+export const StyledButtonLink = styled(Link)`
+  font-size: 1rem;
+  min-width: 80px;
+  color: #282828;
+  transition: color 0.2s ease-in;
+  margin: 0.5rem 2rem;
+  display: inline-block;
+  text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1.25rem 2rem;
+  }
+`;
+
 export const Label = styled('span')`
   font-weight: 500;
   color: #404041;
@@ -136,9 +164,9 @@ export const Span = styled('span')`
   &:hover,
   &:active,
   &:focus {
-    color: rgb(255, 130, 92);
+    color: #FF6633;
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) underline;
+    text-decoration: #FF6633 underline;
   }
 `;
 
