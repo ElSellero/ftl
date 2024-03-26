@@ -145,7 +145,7 @@ const Header = ({ t }: any) => {
               </Burger>
             )}
         </Row>
-        <Drawer closable={false} visible={isVisible} onClose={onClose}>
+        <Drawer closable={false} open={isVisible} onClose={onClose}>
           <Col style={{ marginBottom: '2.5rem' }}>
             <Label onClick={onClose}>
               <Col span={12}>
