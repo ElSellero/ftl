@@ -16,7 +16,7 @@ const DirectBlock = ({ id }: DirectBlockProps) => {
     // <ContentBlock
     // type='left'
     // title={t('Zollmanagement')}
-    // content={t('AboutContent')}
+    // content={t('ImportExportContent')}
     // section={ImportExportContentDe.section}
     // icon='../png/stock3.png'
     // iconType='png'

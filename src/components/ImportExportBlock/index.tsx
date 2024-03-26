@@ -15,8 +15,8 @@ const ImportExportBlock = ({ id }: ImportExportBlockProps) => {
   return (
     <ContentBlock
       type='right'
-      title={t('Zollmanagement')}
-      content={t('AboutContent')}
+      title={t('Im- und Export')}
+      content={t('ImportExportContent')}
       contentSpecialColor
       section={ImportExportContentDe.section}
       icon='../png/stock2.png'
