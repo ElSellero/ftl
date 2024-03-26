@@ -1,7 +1,7 @@
 export type ListObject = {
   id: string;
   title: string;
-  content: string;
+  content?: string;
   type: 'ListObject';
 }
 

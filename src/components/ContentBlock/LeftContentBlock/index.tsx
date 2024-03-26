@@ -55,16 +55,22 @@ const LeftContentBlock = ({
                         <>
                           <MinTitle>{t(item.title)}</MinTitle>
                           {item.content.map((contentItem, index) => (
-                            <MinPara key={index}>
-                              {t(`- ${contentItem}`)}
-                            </MinPara>
+                            <>
+                              {contentItem && 
+                                <MinPara key={index}>
+                                  {t(`- ${contentItem}`)}
+                                </MinPara>
+                              }
+                            </>
                           ))}
                           <br/>
                         </>
                       ) : (
                         <>
                           <MinTitle>{t(item.title)}</MinTitle>
-                          <MinPara>{t(item.content)}</MinPara>
+                          {item.content &&
+                            <MinPara>{t(item.content)}</MinPara>
+                          }
                         </>
                       )}
                     </li>

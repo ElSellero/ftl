@@ -46,31 +46,36 @@ const RightContentBlock = ({
         <Col lg={11} md={11} sm={11} xs={24}>
           <ContentWrapper>
             <StyledHeadline>{title}</StyledHeadline>
-            <Content>{t(content)}</Content>
-
+            <Content>{content}</Content>
             <ServiceWrapper>
             {isList ? (
               <Row justify="space-between">
                 <ul>
                   {isList.map((item: ListObject | ListBlockObject, id: number) => (
                     <li key={id}>
-                      {item.type === 'ListBlockObject' ? (
-                        <>
-                          <MinTitle>{t(item.title)}</MinTitle>
-                          {item.content.map((contentItem, index) => (
-                            <MinPara key={index}>
-                              {t(`- ${contentItem}`)}
-                            </MinPara>
-                          ))}
-                          <br/>
-                        </>
-                      ) : (
-                        <>
-                          <MinTitle>{t(item.title)}</MinTitle>
+                    {item.type === 'ListBlockObject' ? (
+                      <>
+                        <MinTitle>{t(item.title)}</MinTitle>
+                        {item.content.map((contentItem, index) => (
+                          <>
+                            {contentItem && 
+                              <MinPara key={index}>
+                                {t(`- ${contentItem}`)}
+                              </MinPara>
+                            }
+                          </>
+                        ))}
+                        <br/>
+                      </>
+                    ) : (
+                      <>
+                        <MinTitle>{t(item.title)}</MinTitle>
+                        {item.content &&
                           <MinPara>{t(item.content)}</MinPara>
-                        </>
-                      )}
-                    </li>
+                        }
+                      </>
+                    )}
+                  </li>
                   ))}
                 </ul>
               </Row>) : 
