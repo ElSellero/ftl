@@ -1,0 +1,19 @@
+{
+  "section": [
+    {
+      "title": "Flexibel",
+      "content": "Wir passen uns Ihren Bedürfnissen an und bieten flexible Lösungen für Ihre Transportanforderungen, sei es in Bezug auf Lieferzeiten oder Transportrouten.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Transparent",
+      "content": "Unser transparentes System ermöglicht es Ihnen jederzeit, den Status Ihrer Sendungen abzufragen und alle relevanten Informationen darüber zu erhalten. So bleiben Sie stets informiert über den aktuellen Stand Ihrer Lieferungen.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Leistungsstark",
+      "content": "Mit unserer modernen Flotte und unserem erfahrenen Team bieten wir Ihnen eine leistungsstarke Logistiklösung, die Ihre Sendungen pünktlich und sicher ans Ziel bringt.",
+      "icon": "notes.svg"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../../common/SvgIcon";
 import { ContentBlockProps, ListBlockObject, ListObject } from "../types";
 import {
-  LeftContentSection,
+  LeftBlockContainer,
   Content,
   ContentWrapper,
   ServiceWrapper,
@@ -11,7 +11,8 @@ import {
   MinPara,
   IconWrapper,
   Empty,
-  StyledHeadline
+  StyledHeadline,
+  MinSpecialTitle
 } from "./styles";
 import { PngIcon } from "../../../common/PngIcon";
 
@@ -21,6 +22,7 @@ const LeftContentBlock = ({
   noShadow = false,
   title,
   content,
+  contentSpecialColor,
   section,
   t,
   id,
@@ -28,7 +30,7 @@ const LeftContentBlock = ({
   isList
 }: ContentBlockProps) => {
   return (
-    <LeftContentSection>
+    <LeftBlockContainer>
       <Row justify="space-between" align="middle" id={id}>
         <Col lg={11} md={11} sm={12} xs={24}>
           <IconWrapper noShadow={noShadow}>
@@ -75,7 +77,11 @@ const LeftContentBlock = ({
                     return (
                       <Col key={id} span={11}>
                         <SvgIcon src={item.icon} width="60px" height="60px" />
-                        <MinTitle>{t(item.title)}</MinTitle>
+                        {
+                          !contentSpecialColor ? 
+                          <MinTitle>{t(item.title)}</MinTitle> :
+                          <MinSpecialTitle>{t(item.title)}</MinSpecialTitle>
+                        }
                         <MinPara>{t(item.content)}</MinPara>
                       </Col>
                     );
@@ -86,7 +92,7 @@ const LeftContentBlock = ({
           </ContentWrapper>
         </Col>
       </Row>
-    </LeftContentSection>
+    </LeftBlockContainer>
   );
 };
 

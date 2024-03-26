@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
-import AboutContentDe from '../../content/AboutContentDe.json';
+import ImportExportContentDe from '../../content/ImportExportContentDe.json';
 import { ListBlockObject, ListObject } from '../ContentBlock/types';
 
 

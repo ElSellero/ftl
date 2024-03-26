@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
-import AboutContentDe from '../../content/AboutContentDe.json';
+import ImportExportContentDe from '../../content/ImportExportContentDe.json';
 
 
 interface WarehouseBlockProps {
@@ -17,7 +17,7 @@ const WarehouseBlock = ({ id }: WarehouseBlockProps) => {
     // type='left'
     // title={t('Zollmanagement')}
     // content={t('AboutContent')}
-    // section={AboutContentDe.section}
+    // section={ImportExportContentDe.section}
     // icon='../png/stock3.png'
     // iconType='png'
     // id='about'

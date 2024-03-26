@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import AboutContentDe from '../../content/AboutContentDe.json';
+import ImportExportContentDe from '../../content/ImportExportContentDe.json';
 import { useTranslation } from 'react-i18next';
 import Intro from '../../components/Intro';
 import CookieNoticeReact from '../../components/CookieNotice';

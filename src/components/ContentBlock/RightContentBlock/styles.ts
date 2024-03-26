@@ -42,6 +42,18 @@ export const MinTitle = styled("h6")`
   font-family: "Lunasima Light", sans-serif;
 `;
 
+export const MinSpecialTitle = styled("h6")`
+  font-size: 15px;
+  line-height: 1rem;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  color: #FF6633;
+  :first-letter {
+    color: #000080;
+  }
+  font-family: "Lunasima Bold", sans-serif;
+`;
+
 export const MinPara = styled("p")`
   font-size: 13px;
 `;

@@ -18,6 +18,7 @@ export interface ContentBlockProps {
   noShadow?: boolean;
   title?: string;
   content?: string;
+  contentSpecialColor?: boolean;
   section?: any;
   button?: any;
   t?: any;
