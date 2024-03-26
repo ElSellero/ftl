@@ -2,6 +2,14 @@ export type ListObject = {
   id: string;
   title: string;
   content: string;
+  type: 'ListObject';
+}
+
+export type ListBlockObject = {
+  id: string;
+  title: string;
+  content: Array<string>;
+  type: 'ListBlockObject';
 }
 
 export interface ContentBlockProps {
@@ -16,5 +24,5 @@ export interface ContentBlockProps {
   id?: string;
   type?: string;
   size?: string;
-  isList?: Array<ListObject>;
+  isList?: Array<ListObject | ListBlockObject>;
 }

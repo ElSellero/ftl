@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../../common/SvgIcon";
-import { ContentBlockProps, ListObject } from "../types";
+import { ContentBlockProps, ListBlockObject, ListObject } from "../types";
 import {
   LeftContentSection,
   Content,
@@ -47,10 +47,24 @@ const LeftContentBlock = ({
             {isList ? (
               <Row justify="space-between">
                 <ul>
-                  {isList.map((item: ListObject, id: number) => (
+                  {isList.map((item: ListObject | ListBlockObject, id: number) => (
                     <li key={id}>
-                      <MinTitle>{t(item.title)}</MinTitle>
-                      <MinPara>{t(item.content)}</MinPara>
+                      {item.type === 'ListBlockObject' ? (
+                        <>
+                          <MinTitle>{t(item.title)}</MinTitle>
+                          {item.content.map((contentItem, index) => (
+                            <MinPara key={index}>
+                              {t(`- ${contentItem}`)}
+                            </MinPara>
+                          ))}
+                          <br/>
+                        </>
+                      ) : (
+                        <>
+                          <MinTitle>{t(item.title)}</MinTitle>
+                          <MinPara>{t(item.content)}</MinPara>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>

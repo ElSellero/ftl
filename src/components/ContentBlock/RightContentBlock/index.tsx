@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Button } from "../../../common/Button";
-import { ContentBlockProps } from "../types";
+import { ContentBlockProps, ListBlockObject, ListObject } from "../types";
 import {
   RightBlockContainer,
   Content,
@@ -9,7 +9,10 @@ import {
   ButtonWrapper,
   IconWrapper,
   Empty,
-  StyledHeadline
+  StyledHeadline,
+  MinTitle,
+  MinPara,
+  ServiceWrapper
 } from "./styles";
 import { SvgIcon } from "../../../common/SvgIcon";
 import { PngIcon } from "../../../common/PngIcon";
@@ -17,8 +20,8 @@ import { PngIcon } from "../../../common/PngIcon";
 const RightBlock = ({
   title,
   content,
-  button,
   icon,
+  section,
   iconType = "svg",
   noShadow = false,
   t,
@@ -26,12 +29,6 @@ const RightBlock = ({
   size = "100%",
   isList
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
   return (
     <RightBlockContainer>
       <Row justify="space-between" align="middle" id={id}>
@@ -39,7 +36,49 @@ const RightBlock = ({
           <ContentWrapper>
             <StyledHeadline>{title}</StyledHeadline>
             <Content>{t(content)}</Content>
-            <ButtonWrapper>
+
+            <ServiceWrapper>
+            {isList ? (
+              <Row justify="space-between">
+                <ul>
+                  {isList.map((item: ListObject | ListBlockObject, id: number) => (
+                    <li key={id}>
+                      {item.type === 'ListBlockObject' ? (
+                        <>
+                          <MinTitle>{t(item.title)}</MinTitle>
+                          {item.content.map((contentItem, index) => (
+                            <MinPara key={index}>
+                              {t(`- ${contentItem}`)}
+                            </MinPara>
+                          ))}
+                          <br/>
+                        </>
+                      ) : (
+                        <>
+                          <MinTitle>{t(item.title)}</MinTitle>
+                          <MinPara>{t(item.content)}</MinPara>
+                        </>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </Row>) : 
+              <Row justify="space-between">
+                {typeof section === "object" &&
+                  section.map((item: any, id: number) => {
+                    return (
+                      <Col key={id} span={11}>
+                        <SvgIcon src={item.icon} width="60px" height="60px" />
+                        <MinTitle>{t(item.title)}</MinTitle>
+                        <MinPara>{t(item.content)}</MinPara>
+                      </Col>
+                    );
+                  })}
+              </Row>
+            }
+            </ServiceWrapper>
+
+            {/* <ButtonWrapper>
               {typeof button === "object" &&
                 button.map((item: any, id: number) => {
                   return (
@@ -52,7 +91,7 @@ const RightBlock = ({
                     </Button>
                   );
                 })}
-            </ButtonWrapper>
+            </ButtonWrapper> */}
           </ContentWrapper>
         </Col>
         <Col lg={11} md={11} sm={12} xs={24}>
