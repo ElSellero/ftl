@@ -1,10 +1,10 @@
 import { lazy } from 'react';
-import ImportExportContentDe from '../../content/ImportExportContentDe.json';
 import { useTranslation } from 'react-i18next';
-import Intro from '../../components/Intro';
-import CookieNoticeReact from '../../components/CookieNotice';
 import { ListObject } from '../../components/ContentBlock/types';
+import CookieNoticeReact from '../../components/CookieNotice';
 import GoogleMapsMap from '../../components/GoogleMapsMap';
+import Intro from '../../components/Intro';
+import ImportExportContentDe from '../../content/ImportExportContentDe.json';
 
 const Contact = lazy(() => import('../../components/ContactForm'));
 const Container = lazy(() => import('../../common/Container'));
@@ -18,58 +18,63 @@ const Home = () => {
     {
       id: '1',
       title: 'November 2016',
-      content: 'Bewilligung als zugelassener Versender durch das Hauptzollamt Lörrach',
-      type: 'ListObject'
+      content:
+        'Bewilligung als zugelassener Versender durch das Hauptzollamt Lörrach',
+      type: 'ListObject',
     },
     {
       id: '2',
       title: 'Juli 2014',
-      content: 'Erteilung eines Zertifikates Zollmanager IHK durch die IHK Hochrhein-Bodensee',
-      type: 'ListObject'
+      content:
+        'Erteilung eines Zertifikates Zollmanager IHK durch die IHK Hochrhein-Bodensee',
+      type: 'ListObject',
     },
     {
       id: '3',
       title: 'August 2013',
-      content: 'Erteilung eines AEO-Zertifikates durch das Hauptzollamt Lörrach',
-      type: 'ListObject'
+      content:
+        'Erteilung eines AEO-Zertifikates durch das Hauptzollamt Lörrach',
+      type: 'ListObject',
     },
     {
       id: '4',
       title: 'Juli 2013',
       content: 'Erteilung einer Postlizenz gemäß § 6 PostG',
-      type: 'ListObject'
+      type: 'ListObject',
     },
     {
       id: '5',
       title: 'Januar 2012',
-      content: 'Verlegung der Administrative in die Büroräume unserer Lageranschrift in Teningen',
-      type: 'ListObject'
+      content:
+        'Verlegung der Administrative in die Büroräume unserer Lageranschrift in Teningen',
+      type: 'ListObject',
     },
     {
       id: '6',
       title: 'September 2011',
       content: 'Inbetriebnahme der Lagerräumlichkeiten in Teningen',
-      type: 'ListObject'
+      type: 'ListObject',
     },
     {
       id: '7',
       title: 'Dezember 2010',
       content: 'Bewilligung eines laufenden Zahlungsaufschubes (Aufschubkonto)',
-      type: 'ListObject'
+      type: 'ListObject',
     },
     {
       id: '8',
       title: 'Oktober 2010',
-      content: 'Oktober 2010 – Mitgliedschaft in einem europaweitem Kurierverbund',
-      type: 'ListObject'
+      content:
+        'Oktober 2010 – Mitgliedschaft in einem europaweitem Kurierverbund',
+      type: 'ListObject',
     },
     {
       id: '9',
       title: 'September 2010',
       content: 'Firmengründung',
-      type: 'ListObject'
-    }
-  ] 
+      type: 'ListObject',
+    },
+  ];
   return (
     <>
       <IntroContainer>
@@ -98,16 +103,16 @@ const Home = () => {
           size='100%'
         />
         <ContentBlock
-        type='left'
-        title={t('Firmengeschichte')}
-        content={t('')}
-        icon='../png/stock3.png'
-        iconType='png'
-        id='about'
-        size='100%'
-        isList={listObject}
+          type='left'
+          title={t('Firmengeschichte')}
+          content={t('')}
+          icon='../png/stock3.png'
+          iconType='png'
+          id='about'
+          size='100%'
+          isList={listObject}
         />
-        <GoogleMapsMap/>
+        <GoogleMapsMap title={t('Standort')} />
         {/* <MiddleBlock
           title={t('GettingInterestTitle')}
           content={t('GettingInterestContent')}
@@ -149,7 +154,6 @@ const Home = () => {
         */}
       </Container>
     </>
-
   );
 };
 
