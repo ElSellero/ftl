@@ -32,7 +32,7 @@ const LeftContentBlock = ({
   return (
     <LeftBlockContainer>
       <Row justify="space-between" align="middle" id={id}>
-        <Col lg={11} md={11} sm={12} xs={24}>
+        <Col lg={11} md={24} sm={24} xs={24}>
           <IconWrapper noShadow={noShadow}>
             {iconType === "svg" ?
               <SvgIcon src={icon} width={size} height={size} /> :
@@ -41,7 +41,7 @@ const LeftContentBlock = ({
           </IconWrapper>
           <Empty/>
         </Col>
-        <Col lg={11} md={11} sm={11} xs={24}>
+        <Col lg={11} md={24} sm={24} xs={24}>
           <ContentWrapper>
             <StyledHeadline>{t(title)}</StyledHeadline>
             <Content>{t(content)}</Content>
