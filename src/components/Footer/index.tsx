@@ -1,20 +1,23 @@
-import { Row, Col } from 'antd';
+import { Col, Row } from 'antd';
 import { withTranslation } from 'react-i18next';
-import { SvgIcon } from '../../common/SvgIcon';
 import Container from '../../common/Container';
+import { SvgIcon } from '../../common/SvgIcon';
+import GoogleMapsMap from '../GoogleMapsMap';
 import {
-  FooterSection,
-  Title,
-  Extra,
-  LogoContainer,
-  Para,
-  Large,
   Chat,
   Empty,
+  Extra,
   FooterContainer,
+  FooterSection,
+  Label,
   Language,
-  Label
+  Large,
+  LargeAnchor,
+  LogoContainer,
+  Para,
+  Title,
 } from './styles';
+const Dsgvo = require('../../pdf/DSGVO.pdf');
 
 interface SocialLinkProps {
   href: string;
@@ -22,8 +25,6 @@ interface SocialLinkProps {
 }
 
 const Footer = ({ t }: any) => {
-  
-
   const SocialLink = ({ href, src }: SocialLinkProps) => {
     return (
       <a
@@ -67,17 +68,14 @@ const Footer = ({ t }: any) => {
             </Col>
             <Col lg={6} md={6} sm={24} xs={24}>
               <Title>{t('Policy')}</Title>
-              <Large to='/impressum' left='true'>
-                {t('Impressum')}
-              </Large>
-              <Large to='/datenschutz' left='true'>
+              <Large to='/impressum'>{t('Impressum')}</Large>
+              <LargeAnchor href={Dsgvo} target='blank'>
                 {t('Datenschutz')}
-              </Large>
+              </LargeAnchor>
             </Col>
           </Row>
           <Empty />
-          <Row justify='space-between'>
-          </Row>
+          <Row justify='space-between'></Row>
         </Container>
       </FooterSection>
       <Extra>

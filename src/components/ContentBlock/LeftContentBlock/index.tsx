@@ -1,9 +1,9 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../../common/SvgIcon";
-import { ContentBlockProps, ListObject } from "../types";
+import { ContentBlockProps, ListBlockObject, ListObject } from "../types";
 import {
-  LeftContentSection,
+  LeftBlockContainer,
   Content,
   ContentWrapper,
   ServiceWrapper,
@@ -11,7 +11,8 @@ import {
   MinPara,
   IconWrapper,
   Empty,
-  StyledHeadline
+  StyledHeadline,
+  MinSpecialTitle
 } from "./styles";
 import { PngIcon } from "../../../common/PngIcon";
 
@@ -21,6 +22,7 @@ const LeftContentBlock = ({
   noShadow = false,
   title,
   content,
+  contentSpecialColor,
   section,
   t,
   id,
@@ -28,7 +30,7 @@ const LeftContentBlock = ({
   isList
 }: ContentBlockProps) => {
   return (
-    <LeftContentSection>
+    <LeftBlockContainer>
       <Row justify="space-between" align="middle" id={id}>
         <Col lg={11} md={11} sm={12} xs={24}>
           <IconWrapper noShadow={noShadow}>
@@ -47,10 +49,30 @@ const LeftContentBlock = ({
             {isList ? (
               <Row justify="space-between">
                 <ul>
-                  {isList.map((item: ListObject, id: number) => (
+                  {isList.map((item: ListObject | ListBlockObject, id: number) => (
                     <li key={id}>
-                      <MinTitle>{t(item.title)}</MinTitle>
-                      <MinPara>{t(item.content)}</MinPara>
+                      {item.type === 'ListBlockObject' ? (
+                        <>
+                          <MinTitle>{t(item.title)}</MinTitle>
+                          {item.content.map((contentItem, index) => (
+                            <>
+                              {contentItem && 
+                                <MinPara key={index}>
+                                  {t(`- ${contentItem}`)}
+                                </MinPara>
+                              }
+                            </>
+                          ))}
+                          <br/>
+                        </>
+                      ) : (
+                        <>
+                          <MinTitle>{t(item.title)}</MinTitle>
+                          {item.content &&
+                            <MinPara>{t(item.content)}</MinPara>
+                          }
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -61,7 +83,11 @@ const LeftContentBlock = ({
                     return (
                       <Col key={id} span={11}>
                         <SvgIcon src={item.icon} width="60px" height="60px" />
-                        <MinTitle>{t(item.title)}</MinTitle>
+                        {
+                          !contentSpecialColor ? 
+                          <MinTitle>{t(item.title)}</MinTitle> :
+                          <MinSpecialTitle>{t(item.title)}</MinSpecialTitle>
+                        }
                         <MinPara>{t(item.content)}</MinPara>
                       </Col>
                     );
@@ -72,7 +98,7 @@ const LeftContentBlock = ({
           </ContentWrapper>
         </Col>
       </Row>
-    </LeftContentSection>
+    </LeftBlockContainer>
   );
 };
 

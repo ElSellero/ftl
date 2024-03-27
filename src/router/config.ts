@@ -10,11 +10,6 @@ const routes = [
     component: "Impressum",
   },
   {
-    path: ["/", "/datenschutz"],
-    exact: true,
-    component: "Datenschutz",
-  },
-  {
     path: ["/", "/customs"],
     exact: true,
     component: "Customs",

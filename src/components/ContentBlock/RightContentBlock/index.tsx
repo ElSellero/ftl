@@ -1,72 +1,111 @@
-import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
-import { Button } from "../../../common/Button";
-import { ContentBlockProps } from "../types";
+import { Col, Row } from 'antd';
+import { withTranslation } from 'react-i18next';
+import { Button } from '../../../common/Button';
+import { PngIcon } from '../../../common/PngIcon';
+import { SvgIcon } from '../../../common/SvgIcon';
+import { ContentBlockProps, ListBlockObject, ListObject } from '../types';
 import {
-  RightBlockContainer,
+  ButtonWrapper,
   Content,
   ContentWrapper,
-  ButtonWrapper,
-  IconWrapper,
   Empty,
-  StyledHeadline
-} from "./styles";
-import { SvgIcon } from "../../../common/SvgIcon";
-import { PngIcon } from "../../../common/PngIcon";
+  IconWrapper,
+  MinPara,
+  MinSpecialTitle,
+  MinTitle,
+  RightBlockContainer,
+  ServiceWrapper,
+  StyledHeadline,
+} from './styles';
 
-const RightBlock = ({
+const RightContentBlock = ({
+  icon,
+  iconType = 'svg',
   title,
   content,
-  button,
-  icon,
-  iconType = "svg",
+  contentSpecialColor,
+  section,
   noShadow = false,
   t,
   id,
-  size = "100%",
-  isList
+  size = '100%',
+  isList,
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
   return (
     <RightBlockContainer>
-      <Row justify="space-between" align="middle" id={id}>
-        <Col lg={11} md={11} sm={11} xs={24}>
+      <Row justify='space-between' align='middle' id={id}>
+        <Col lg={11} md={24} sm={24} xs={24}>
+          <IconWrapper noShadow={noShadow}>
+            {iconType === 'svg' ? (
+              <SvgIcon src={icon} width={size} height={size} />
+            ) : (
+              <PngIcon src={icon} width={size} height={size} />
+            )}
+          </IconWrapper>
+          <Empty />
+        </Col>
+        <Col lg={11} md={24} sm={24} xs={24}>
           <ContentWrapper>
             <StyledHeadline>{title}</StyledHeadline>
-            <Content>{t(content)}</Content>
-            <ButtonWrapper>
-              {typeof button === "object" &&
-                button.map((item: any, id: number) => {
-                  return (
-                    <Button
-                      key={id}
-                      color={item.color}
-                      onClick={() => scrollTo("about")}
-                    >
-                      {t(item.title)}
-                    </Button>
-                  );
-                })}
-            </ButtonWrapper>
+            <Content>{content}</Content>
+            <ServiceWrapper>
+              {isList ? (
+                <Row justify='space-between'>
+                  <ul>
+                    {isList.map(
+                      (item: ListObject | ListBlockObject, id: number) => (
+                        <li key={id}>
+                          {item.type === 'ListBlockObject' ? (
+                            <>
+                              <MinTitle>{t(item.title)}</MinTitle>
+                              {item.content.map((contentItem, index) => (
+                                <>
+                                  {contentItem && (
+                                    <MinPara key={index}>
+                                      {t(`- ${contentItem}`)}
+                                    </MinPara>
+                                  )}
+                                </>
+                              ))}
+                              <br />
+                            </>
+                          ) : (
+                            <>
+                              <MinTitle>{t(item.title)}</MinTitle>
+                              {item.content && (
+                                <MinPara>{t(item.content)}</MinPara>
+                              )}
+                            </>
+                          )}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </Row>
+              ) : (
+                <Row justify='space-between'>
+                  {typeof section === 'object' &&
+                    section.map((item: any, id: number) => {
+                      return (
+                        <Col key={id} span={11}>
+                          <SvgIcon src={item.icon} width='60px' height='60px' />
+                          {!contentSpecialColor ? (
+                            <MinTitle>{t(item.title)}</MinTitle>
+                          ) : (
+                            <MinSpecialTitle>{t(item.title)}</MinSpecialTitle>
+                          )}
+                          <MinPara>{t(item.content)}</MinPara>
+                        </Col>
+                      );
+                    })}
+                </Row>
+              )}
+            </ServiceWrapper>
           </ContentWrapper>
-        </Col>
-        <Col lg={11} md={11} sm={12} xs={24}>
-        <IconWrapper noShadow={noShadow}>
-          {iconType === "svg" ?
-              <SvgIcon src={icon} width={size} height={size} /> :
-              <PngIcon src={icon} width={size} height={size} />
-            }
-          </IconWrapper>
-          <Empty/>
         </Col>
       </Row>
     </RightBlockContainer>
   );
 };
 
-export default withTranslation()(RightBlock);
+export default withTranslation()(RightContentBlock);

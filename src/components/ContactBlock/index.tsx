@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
-import AboutContentDe from '../../content/AboutContentDe.json';
+import ImportExportContentDe from '../../content/ImportExportContentDe.json';
 
 
 interface ContactBlockProps {
@@ -16,8 +16,8 @@ const ContactBlock = ({ id }: ContactBlockProps) => {
     // <ContentBlock
     // type='left'
     // title={t('Zollmanagement')}
-    // content={t('AboutContent')}
-    // section={AboutContentDe.section}
+    // content={t('ImportExportContent')}
+    // section={ImportExportContentDe.section}
     // icon='../png/stock3.png'
     // iconType='png'
     // id='about'

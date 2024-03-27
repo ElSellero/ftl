@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ContentBlockProps } from "../types";
 
-export const LeftContentSection = styled("section")`
+export const LeftBlockContainer = styled("section")`
   position: relative;
   padding: 10rem 0 8rem;
 
@@ -40,6 +40,18 @@ export const MinTitle = styled("h6")`
 
 export const MinPara = styled("p")`
   font-size: 13px;
+`;
+
+export const MinSpecialTitle = styled("h6")`
+  font-size: 15px;
+  line-height: 1rem;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  color: #FF6633;
+  :first-letter {
+    color: #000080;
+  }
+  font-family: "Lunasima Bold", sans-serif;
 `;
 
 export const IconWrapper = styled("div")<ContentBlockProps>`

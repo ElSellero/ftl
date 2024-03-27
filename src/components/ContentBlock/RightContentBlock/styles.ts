@@ -23,8 +23,39 @@ export const ContentWrapper = styled("div")`
   max-width: 540px;
 
   @media only screen and (max-width: 575px) {
-    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
+`;
+
+export const ServiceWrapper = styled("div")`
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+`;
+
+export const MinTitle = styled("h6")`
+  font-size: 15px;
+  line-height: 1rem;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Lunasima Light", sans-serif;
+`;
+
+export const MinSpecialTitle = styled("h6")`
+  font-size: 15px;
+  line-height: 1rem;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  color: #FF6633;
+  :first-letter {
+    color: #000080;
+  }
+  font-family: "Lunasima Bold", sans-serif;
+`;
+
+export const MinPara = styled("p")`
+  font-size: 13px;
 `;
 
 export const ButtonWrapper = styled("div")`

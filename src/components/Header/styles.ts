@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { MenuOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const HeaderSection = styled('header')`
   display: flex;
@@ -13,7 +13,7 @@ export const HeaderSection = styled('header')`
   }
 `;
 
-export const Empty = styled("div")`
+export const Empty = styled('div')`
   position: relative;
   height: 2rem;
 `;
@@ -22,7 +22,7 @@ export const NavigationWrapper = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 991px) {
     width: 95%;
   }
   @media only screen and (max-width: 529px) {
@@ -33,11 +33,11 @@ export const NavigationWrapper = styled('div')`
 export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
-  @media only screen and (max-width: 890px) {
+  justify-content: center;
+  @media only screen and (max-width: 991px) {
     flex-direction: row;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 `;
 
@@ -45,7 +45,7 @@ export const MenuWrapper = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 991px) {
     flex-direction: column;
   }
 `;
@@ -78,7 +78,7 @@ export const ContactWrapper = styled('div')<any>`
 `;
 
 export const Burger = styled('div')`
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 991px) {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -93,7 +93,7 @@ export const Burger = styled('div')`
 `;
 
 export const NotHidden = styled('div')`
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 991px) {
     display: none;
   }
 `;
@@ -164,13 +164,13 @@ export const Span = styled('span')`
   &:hover,
   &:active,
   &:focus {
-    color: #FF6633;
+    color: #ff6633;
     text-underline-position: under;
-    text-decoration: #FF6633 underline;
+    text-decoration: #ff6633 underline;
   }
 `;
 
-export const LanguageSwitch = styled("div")<any>`
+export const LanguageSwitch = styled('div')<any>`
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 
@@ -183,7 +183,7 @@ export const LanguageSwitch = styled("div")<any>`
   }
 `;
 
-export const LanguageSwitchContainer = styled("div")`
+export const LanguageSwitchContainer = styled('div')`
   display: flex;
   justify-content: space-between;
   width: 85px;
