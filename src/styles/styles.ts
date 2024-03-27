@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 import background from './background.jpg';
 
 export const Styles = createGlobalStyle`
@@ -71,7 +71,7 @@ export const Styles = createGlobalStyle`
         font-size: 56px;
         line-height: 1.18;
 
-        @media only screen and (max-width: 890px) {
+        @media only screen and (max-width: 991px) {
           font-size: 47px;
         }
       

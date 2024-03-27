@@ -83,9 +83,11 @@ const Header = ({ t }: any) => {
             <Button>{t('Contact')}</Button>
           </Span>
         </CustomNavLinkSmall> */}
-        <StyledLink to={'/contact'}>
+
+        {/* <StyledLink to={'/contact'}>
           <Button fixedWidth={'140px'}>{t('Contact')}</Button>
-        </StyledLink>
+        </StyledLink> */}
+
         {/* <Empty />
         <LanguageSwitchContainer>
           <LanguageSwitch onClick={() => handleChange('de')}>
@@ -120,11 +122,13 @@ const Header = ({ t }: any) => {
   return (
     <HeaderSection>
       <Container>
+        <Row>
+          <LogoContainer to='/' aria-label='homepage'>
+            <SvgIcon src='logo.svg' width='360px' height='120px' />
+          </LogoContainer>
+        </Row>
         <Row justify='space-evenly'>
           <NavigationWrapper>
-            <LogoContainer to='/' aria-label='homepage'>
-              <SvgIcon src='logo.svg' width='360px' height='120px' />
-            </LogoContainer>
             {location.pathname !== '/datenschutz' &&
               location.pathname !== '/thanks' && (
                 <NotHidden>
