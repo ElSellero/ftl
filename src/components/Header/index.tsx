@@ -123,9 +123,11 @@ const Header = ({ t }: any) => {
     <HeaderSection>
       <Container>
         <Row>
-          <LogoContainer to='/' aria-label='homepage'>
-            <SvgIcon src='logo.svg' width='360px' height='120px' />
-          </LogoContainer>
+          <Col span={24}>
+            <LogoContainer to='/' aria-label='homepage'>
+              <SvgIcon src='logo.svg' width='360px' height='120px' />
+            </LogoContainer>
+          </Col>
         </Row>
         <Row justify='space-evenly'>
           <NavigationWrapper>
