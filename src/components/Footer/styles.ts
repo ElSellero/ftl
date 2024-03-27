@@ -68,6 +68,25 @@ export const Large = styled(Link)<any>`
   }
 `;
 
+export const LargeAnchor = styled("a")`
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: capitalize;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 0.625rem;
+  transition: all 0.3s ease-in-out;
+  max-width: max-content;
+
+  &:hover {
+    color: #FF6633;
+    text-underline-position: under;
+    text-decoration: #FF6633 underline;
+  }
+`;
+
 export const Chat = styled("p")`
   color: #282828;
   max-width: fit-content;

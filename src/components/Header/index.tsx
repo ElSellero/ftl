@@ -1,28 +1,28 @@
+import { Col, Drawer, Row } from 'antd';
+import i18n from 'i18next';
 import { useState } from 'react';
-import { Row, Col, Drawer } from 'antd';
 import { withTranslation } from 'react-i18next';
-import Container from '../../common/Container';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../../common/Button';
+import Container from '../../common/Container';
+import { SvgIcon } from '../../common/SvgIcon';
 import {
-  HeaderSection,
-  LogoContainer,
   Burger,
-  NotHidden,
-  Menu,
   CustomNavLinkSmall,
+  Empty,
+  HeaderSection,
   Label,
-  Outline,
-  Span,
+  LanguageSwitch,
+  LanguageSwitchContainer,
+  LogoContainer,
+  Menu,
   MenuWrapper,
   NavigationWrapper,
-  LanguageSwitchContainer,
-  LanguageSwitch,
-  Empty,
+  NotHidden,
+  Outline,
+  Span,
   StyledLink,
 } from './styles';
-import { SvgIcon } from '../../common/SvgIcon';
-import { Link, useLocation } from 'react-router-dom';
-import i18n from 'i18next';
 
 const Header = ({ t }: any) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -123,14 +123,9 @@ const Header = ({ t }: any) => {
         <Row justify='space-evenly'>
           <NavigationWrapper>
             <LogoContainer to='/' aria-label='homepage'>
-              <SvgIcon
-                src='logo.svg'
-                width='360px'
-                height='120px'
-              />
+              <SvgIcon src='logo.svg' width='360px' height='120px' />
             </LogoContainer>
             {location.pathname !== '/datenschutz' &&
-              location.pathname !== '/impressum' &&
               location.pathname !== '/thanks' && (
                 <NotHidden>
                   <MenuItem />
@@ -138,7 +133,6 @@ const Header = ({ t }: any) => {
               )}
           </NavigationWrapper>
           {location.pathname !== '/datenschutz' &&
-            location.pathname !== '/impressum' &&
             location.pathname !== '/thanks' && (
               <Burger onClick={showDrawer}>
                 <Outline />
