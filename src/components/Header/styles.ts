@@ -34,11 +34,7 @@ export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media only screen and (max-width: 991px) {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-  }
+  flex-direction: row;
 `;
 
 export const MenuWrapper = styled('div')`

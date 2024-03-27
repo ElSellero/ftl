@@ -122,11 +122,9 @@ const Header = ({ t }: any) => {
   return (
     <HeaderSection>
       <Container>
-        <Row>
-          <LogoContainer to='/' aria-label='homepage'>
-            <SvgIcon src='logo.svg' width='360px' height='120px' />
-          </LogoContainer>
-        </Row>
+        <LogoContainer to='/' aria-label='homepage'>
+          <SvgIcon src='logo.svg' width='360px' height='120px' />
+        </LogoContainer>
         <Row justify='space-evenly'>
           <NavigationWrapper>
             {location.pathname !== '/datenschutz' &&
