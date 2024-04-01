@@ -1,39 +1,34 @@
 const routes = [
   {
-    path: ["/", "/home"],
+    path: ['/', '/home'],
     exact: true,
-    component: "Home",
+    component: 'Home',
   },
   {
-    path: ["/", "/impressum"],
+    path: ['/', '/impressum'],
     exact: true,
-    component: "Impressum",
+    component: 'Impressum',
   },
   {
-    path: ["/", "/customs"],
+    path: ['/', '/customs'],
     exact: true,
-    component: "Customs",
+    component: 'Customs',
   },
   {
-    path: ["/", "/importexport"],
+    path: ['/', '/importexport'],
     exact: true,
-    component: "ImportExport",
+    component: 'ImportExport',
   },
   {
-    path: ["/", "/direct"],
+    path: ['/', '/direct'],
     exact: true,
-    component: "Direct",
+    component: 'Direct',
   },
   {
-    path: ["/", "/warehouse"],
+    path: ['/', '/warehouse'],
     exact: true,
-    component: "Warehouse",
+    component: 'Warehouse',
   },
-  {
-    path: ["/", "/contact"],
-    exact: true,
-    component: "Contact",
-  }
 ];
 
 export default routes;

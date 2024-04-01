@@ -1,9 +1,9 @@
-import { lazy, Suspense } from "react";
-import { Switch, Route } from "react-router-dom";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import routes from "./config";
-import { Styles } from "../styles/styles";
+import { lazy, Suspense } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import { Styles } from '../styles/styles';
+import routes from './config';
 
 const Router = () => {
   return (

@@ -94,7 +94,8 @@ const Footer = ({ t }: any) => {
                 Allgemeinen Deutschen Spediteur-Bedingungen - ADSp -
               </SmallAnchor>
             </Span>
-            <ParaSpan>&nbsp;jeweils neueste Fassung.</ParaSpan>
+            <ParaSpan>&nbsp;</ParaSpan>
+            <ParaSpan>jeweils neueste Fassung.</ParaSpan>
           </Row>
         </Container>
       </FooterSection>
