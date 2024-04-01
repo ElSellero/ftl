@@ -15,6 +15,10 @@ import {
   LargeAnchor,
   LogoContainer,
   Para,
+  ParaSpan,
+  SmallAnchor,
+  Span,
+  StyledLink,
   Title,
 } from './styles';
 const Dsgvo = require('../../pdf/DSGVO.pdf');
@@ -76,6 +80,22 @@ const Footer = ({ t }: any) => {
           </Row>
           <Empty />
           <Row justify='space-between'></Row>
+        </Container>
+        <Container>
+          <Row>
+            <ParaSpan>
+              Wir arbeiten ausschließlich auf Grundlage der&nbsp;
+            </ParaSpan>
+            <Span style={{ textDecoration: 'underline' }}>
+              <SmallAnchor
+                href='https://schunck-group.de/download-center/'
+                target='blank'
+              >
+                Allgemeinen Deutschen Spediteur-Bedingungen - ADSp -
+              </SmallAnchor>
+            </Span>
+            <ParaSpan>&nbsp;jeweils neueste Fassung.</ParaSpan>
+          </Row>
         </Container>
       </FooterSection>
       <Extra>
