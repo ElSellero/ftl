@@ -76,7 +76,7 @@ export const Styles = createGlobalStyle`
         }
       
         @media only screen and (max-width: 414px) {
-          font-size: 32px;
+          font-size: 26px;
         }
     }
 

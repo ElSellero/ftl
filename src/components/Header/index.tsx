@@ -48,19 +48,19 @@ const Header = ({ t }: any) => {
     };
     return (
       <MenuWrapper>
-        <StyledLink to={'/home'}>
+        <StyledLink to={'/home'} onClick={onClose}>
           <Span>Über uns</Span>
         </StyledLink>
-        <StyledLink to={'/customs'}>
+        <StyledLink to={'/customs'} onClick={onClose}>
           <Span>Zollmanagement</Span>
         </StyledLink>
-        <StyledLink to={'/importexport'}>
+        <StyledLink to={'/importexport'} onClick={onClose}>
           <Span>Im- und Export</Span>
         </StyledLink>
-        <StyledLink to={'/direct'}>
+        <StyledLink to={'/direct'} onClick={onClose}>
           <Span>Direktfahrten</Span>
         </StyledLink>
-        <StyledLink to={'/warehouse'}>
+        <StyledLink to={'/warehouse'} onClick={onClose}>
           <Span>Lagerlogistik</Span>
         </StyledLink>
         {/* <CustomNavLinkSmall onClick={() => scrollTo('about')}>
