@@ -30,7 +30,7 @@ export const NavigationWrapper = styled('div')`
   }
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled('a')`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,6 +79,7 @@ export const Burger = styled('div')`
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    cursor: pointer;
   }
 
   display: none;
@@ -111,7 +112,7 @@ export const CustomNavLinkSmall = styled(NavLink)`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled('a')`
   font-size: 1rem;
   color: #282828;
   transition: color 0.2s ease-in;
@@ -124,7 +125,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const StyledButtonLink = styled(Link)`
+export const StyledButtonLink = styled('a')`
   font-size: 1rem;
   min-width: 80px;
   color: #282828;

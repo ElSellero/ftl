@@ -1,6 +1,6 @@
 import { Col, Drawer, Row } from 'antd';
 import i18n from 'i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../../common/Button';
@@ -26,16 +26,35 @@ import {
 
 const Header = ({ t }: any) => {
   const [isVisible, setIsVisible] = useState(false);
-  const location = useLocation();
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth < 991);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth < 991);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const handleChange = (language: string) => {
     i18n.changeLanguage(language);
   };
+
   const showDrawer = () => {
-    setIsVisible(!isVisible);
+    if (innerWidth) {
+      setIsVisible(!isVisible);
+      if (isVisible) {
+        setIsVisible(false);
+      }
+    }
   };
 
   const onClose = () => {
-    setIsVisible(!isVisible);
+    if (innerWidth) {
+      setIsVisible(false);
+    }
   };
 
   const MenuItem = () => {
@@ -48,73 +67,25 @@ const Header = ({ t }: any) => {
     };
     return (
       <MenuWrapper>
-        <StyledLink to={'/home'}>
+        <StyledLink key={'/home'} href={'/home'} onClick={onClose}>
           <Span>Über uns</Span>
         </StyledLink>
-        <StyledLink to={'/customs'}>
+        <StyledLink key={'/customs'} href={'/customs'} onClick={onClose}>
           <Span>Zollmanagement</Span>
         </StyledLink>
-        <StyledLink to={'/importexport'}>
+        <StyledLink
+          key={'/importexport'}
+          href={'/importexport'}
+          onClick={onClose}
+        >
           <Span>Im- und Export</Span>
         </StyledLink>
-        <StyledLink to={'/direct'}>
+        <StyledLink key={'/direct'} href={'/direct'} onClick={onClose}>
           <Span>Direktfahrten</Span>
         </StyledLink>
-        <StyledLink to={'/warehouse'}>
+        <StyledLink key={'/warehouse'} href={'/warehouse'} onClick={onClose}>
           <Span>Lagerlogistik</Span>
         </StyledLink>
-        {/* <CustomNavLinkSmall onClick={() => scrollTo('about')}>
-          <Span>{t('About')}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo('motivation')}>
-          <Span>{t('Motivation')}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo('services1')}>
-          <Span>{t('Services')}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo('career')}>
-          <Span>{t('Career')}</Span>
-        </CustomNavLinkSmall> */}
-        {/* <CustomNavLinkSmall
-          style={{ width: '180px' }}
-          onClick={() => scrollTo('contact')}
-        >
-          <Span>
-            <Button>{t('Contact')}</Button>
-          </Span>
-        </CustomNavLinkSmall> */}
-
-        {/* <StyledLink to={'/contact'}>
-          <Button fixedWidth={'140px'}>{t('Contact')}</Button>
-        </StyledLink> */}
-
-        {/* <Empty />
-        <LanguageSwitchContainer>
-          <LanguageSwitch onClick={() => handleChange('de')}>
-            <SvgIcon
-              src='germany.svg'
-              aria-label='homepage'
-              width='30px'
-              height='30px'
-            />
-          </LanguageSwitch>
-          <LanguageSwitch onClick={() => handleChange('en')}>
-            <SvgIcon
-              src='united-kingdom.svg'
-              aria-label='homepage'
-              width='30px'
-              height='30px'
-            />
-          </LanguageSwitch>
-          <LanguageSwitch onClick={() => handleChange('es')}>
-                  <SvgIcon
-                    src='spain.svg'
-                    aria-label='homepage'
-                    width='30px'
-                    height='30px'
-                  />
-                </LanguageSwitch> 
-        </LanguageSwitchContainer> */}
       </MenuWrapper>
     );
   };
@@ -122,24 +93,18 @@ const Header = ({ t }: any) => {
   return (
     <HeaderSection>
       <Container>
-        <LogoContainer to='/' aria-label='homepage'>
-          <SvgIcon src='logo.svg' width='360px' height='120px' />
+        <LogoContainer href='/' aria-label='homepage'>
+          <SvgIcon src='logo.svg' width='480px' height='150px' />
         </LogoContainer>
         <Row justify='space-evenly'>
           <NavigationWrapper>
-            {location.pathname !== '/datenschutz' &&
-              location.pathname !== '/thanks' && (
-                <NotHidden>
-                  <MenuItem />
-                </NotHidden>
-              )}
+            <NotHidden>
+              <MenuItem />
+            </NotHidden>
           </NavigationWrapper>
-          {location.pathname !== '/datenschutz' &&
-            location.pathname !== '/thanks' && (
-              <Burger onClick={showDrawer}>
-                <Outline />
-              </Burger>
-            )}
+          <Burger onClick={showDrawer}>
+            <Outline />
+          </Burger>
         </Row>
         <Drawer closable={false} open={isVisible} onClose={onClose}>
           <Col style={{ marginBottom: '2.5rem' }}>

@@ -68,21 +68,21 @@ export const Styles = createGlobalStyle`
     h6 {
         font-family: 'Lunasima Bold', serif;
         color: #282828;
-        font-size: 56px;
+        font-size: 48px;
         line-height: 1.18;
 
-        @media only screen and (max-width: 991px) {
-          font-size: 47px;
+        @media only screen and (max-width: 1025px) {
+          font-size: 36px;
         }
       
         @media only screen and (max-width: 414px) {
-          font-size: 32px;
+          font-size: 26px;
         }
     }
 
     p {
         color: #282828;
-        font-size: 21px;        
+        font-size: 18px;        
         line-height: 1.41;
     }
 
