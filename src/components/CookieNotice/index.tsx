@@ -12,6 +12,7 @@ export interface CookieNoticeReactProps {
   readMoreLabel?: string;
   t?: any;
   id?: string;
+  consentChanged: (consentState: boolean) => void;
 }
 
 const CookieNoticeReact = ({
@@ -21,12 +22,15 @@ const CookieNoticeReact = ({
   titleLabel,
   descriptionLabel,
   id,
+  consentChanged,
 }: CookieNoticeReactProps) => {
   const handleDecline = () => {
     localStorage.setItem('cookieConsent', 'false');
+    consentChanged(false);
   };
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'true');
+    consentChanged(true);
   };
   return (
     <Positioner id={id}>
@@ -35,7 +39,7 @@ const CookieNoticeReact = ({
         declineAllButtonLabel={declineButtonLabel}
         titleLabel={t(titleLabel)}
         descriptionLabel={t(descriptionLabel)}
-        onAcceptButtonClick={handleAccept}
+        onAcceptAllButtonClick={handleAccept}
         onDeclineAllButtonClick={handleDecline}
         cookieExpiration={30}
         cookieName={'cookieConsent'}

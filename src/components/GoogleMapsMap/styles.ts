@@ -31,3 +31,14 @@ export const Empty = styled('div')`
   position: relative;
   height: 2rem;
 `;
+
+export const LogoContainer = styled('a')`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`;
+
+export const MinPara = styled('p')`
+  font-size: 14px;
+`;

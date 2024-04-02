@@ -2,7 +2,6 @@ import { Col, Row } from 'antd';
 import { withTranslation } from 'react-i18next';
 import Container from '../../common/Container';
 import { SvgIcon } from '../../common/SvgIcon';
-import GoogleMapsMap from '../GoogleMapsMap';
 import {
   Chat,
   Empty,
