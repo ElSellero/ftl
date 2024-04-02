@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import { Button } from '../../common/Button';
 import { SvgIcon } from '../../common/SvgIcon';
+import GoogleMapsMapPlaceholder from '../GoogleMapsMapPlaceholder';
 import {
   Content,
   Empty,
@@ -42,19 +43,47 @@ const GoogleMapsMap = ({
   const [markerRef, marker] = useMarkerRef();
   const [showMaps, setShowMaps] = useState(false);
 
-  useEffect(() => {
-    if (cookieConsent) {
-      setShowMaps(cookieConsent);
+  const getCookie = (cname: string): string => {
+    const name = cname + '=';
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+
+    for (const c of ca) {
+      let cookie = c.trim();
+      if (cookie.startsWith(name)) {
+        return cookie.substring(name.length);
+      }
     }
-  }, [cookieConsent]);
+
+    return '';
+  };
+
+  useEffect(() => {
+    console.log('cookieConsent', cookieConsent);
+    if (getCookie('cookieConsent') === 'true') {
+      console.log('isttrue', getCookie('cookieConsent') === 'true');
+      setShowMaps(true);
+    }
+  }, [cookieConsent, showMaps]);
+
+  const handleCookieSet = () => {
+    setShowMaps(true);
+  };
 
   return (
     <MiddleBlockSection isIntro={isIntro} id={id}>
       {title && <StyledHeadline>{title}</StyledHeadline>}
       <Empty />
       {content && <Content>{content}</Content>}
-      {localStorage.getItem('cookieConsent') === 'false' || !showMaps ? (
-        <p>Keine Einwilligung</p>
+      {!showMaps ? (
+        <GoogleMapsMapPlaceholder
+          middleBlockHeadlineTitle={''}
+          middleBlockTitle={''}
+          middleBlockContent='Google Maps wurde aufgrund Ihrer Privatsphäre-Einstellungen blockiert.'
+          middleBlockButton='Akzeptieren'
+          id='noConsent'
+          cookieSetTrue={handleCookieSet}
+        />
       ) : (
         <APIProvider apiKey={`${process.env.REACT_APP_GOOGLE_API}`}>
           <Map zoom={15} center={position}>

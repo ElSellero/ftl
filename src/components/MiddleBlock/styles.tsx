@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { MiddleBlockProps } from ".";
+import styled from 'styled-components';
+import { MiddleBlockProps } from '.';
 
-export const MiddleBlockSection = styled("section")<MiddleBlockProps>`
+export const MiddleBlockSection = styled('section')<MiddleBlockProps>`
   position: relative;
   padding: 4rem 0 6.5rem;
   text-align: center;
@@ -14,13 +14,14 @@ export const MiddleBlockSection = styled("section")<MiddleBlockProps>`
   }
 `;
 
-export const Content = styled("p")<MiddleBlockProps>`
-  font-style: italic;
+export const Content = styled('p')<MiddleBlockProps>`
+  font-size: 1rem;
+  font-family: 'Lunasima Bold', sans-serif;
   padding: 0.75rem 0 0.75rem;
   color: #282828;
 `;
 
-export const ContentWrapper = styled("div")`
+export const ContentWrapper = styled('div')`
   max-width: 1000px;
 
   @media only screen and (max-width: 768px) {
@@ -28,7 +29,7 @@ export const ContentWrapper = styled("div")`
   }
 `;
 
-export const StyledHeadline = styled("h6")<MiddleBlockProps>`
+export const StyledHeadline = styled('h6')<MiddleBlockProps>`
   color: #282828;
   font-size: 2rem;
 `;

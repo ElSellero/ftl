@@ -24,12 +24,11 @@ const CookieNoticeReact = ({
   id,
   consentChanged,
 }: CookieNoticeReactProps) => {
+  
   const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'false');
     consentChanged(false);
   };
   const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'true');
     consentChanged(true);
   };
   return (

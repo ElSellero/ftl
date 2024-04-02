@@ -15,6 +15,7 @@ const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 const Home = () => {
   const { t } = useTranslation();
   const [consent, setConsent] = useState(false);
+
   const listObject: ListObject[] = [
     {
       id: '1',
