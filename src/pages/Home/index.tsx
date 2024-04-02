@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ListObject } from '../../components/ContentBlock/types';
 import CookieNoticeReact from '../../components/CookieNotice';
@@ -14,6 +14,7 @@ const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 
 const Home = () => {
   const { t } = useTranslation();
+  const [consent, setConsent] = useState(false);
   const listObject: ListObject[] = [
     {
       id: '1',
@@ -75,6 +76,7 @@ const Home = () => {
       type: 'ListObject',
     },
   ];
+
   return (
     <>
       <IntroContainer>
@@ -92,6 +94,7 @@ const Home = () => {
           readMoreLabel={t('ReadMoreLabel')}
           descriptionLabel={t('DescriptionLabel')}
           titleLabel={t('TitleLabel')}
+          consentChanged={(consentState) => setConsent(consentState)}
         />
         <ScrollToTop />
         <ContentBlock
@@ -112,7 +115,7 @@ const Home = () => {
           size='100%'
           isList={listObject}
         />
-        <GoogleMapsMap title={t('Standort')} />
+        <GoogleMapsMap title={t('Standort')} cookieConsent={consent} />
         {/* <MiddleBlock
           title={t('GettingInterestTitle')}
           content={t('GettingInterestContent')}
